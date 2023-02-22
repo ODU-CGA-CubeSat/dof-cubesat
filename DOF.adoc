@@ -283,6 +283,7 @@ quantityUnits: {{quantityUnits}}
 options: {{options}}
 selectedOption: {{selectedOption}}
 notes: {{notes}}
+interfaces: {{interfaces}}
 
 ----
 
@@ -385,6 +386,17 @@ notes: {{notes}}
 |
 
 |Developer comments on this part or tool.
+
+| 
+
+
+
+|interfaces
+|list
+
+|3-DataStructures/6-InterfaceListItem.yaml'
+
+|Listing of interfaces for the part or tool.
 
 | 
 
@@ -608,6 +620,60 @@ outputs: {{outputs}}
 |Parameter
 
 |Listing of expected output parameters from this function.
+
+| 
+
+
+
+|===
+
+
+
+
+=== Interface List Item
+*Purpose:* Identifies an interface on a part or tool.
+
+.Interface List Item Template
+----
+id: {{id}}
+description: {{description}}
+descriptionLong: {{descriptionLong}}
+
+----
+
+.Interface List Item Specification
+|===
+|Field |Type |Item Type |Description |Source
+
+
+|id
+|string
+
+|
+
+|Inteface's ID.  Format = single word, only lowercase letters, and may contain hyphens and underscores.
+
+| 
+
+
+
+|description
+|string
+
+|
+
+|Human readable name for the interface.
+
+| 
+
+
+
+|descriptionLong
+|string
+
+|
+
+|Computed value = "{{id}}:\ {{description}}".  Used as shortcut in documentation.
 
 | 
 

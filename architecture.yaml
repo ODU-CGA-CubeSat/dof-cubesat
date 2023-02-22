@@ -211,6 +211,7 @@ elements:
       options: {{options}}
       selectedOption: {{selectedOption}}
       notes: {{notes}}
+      interfaces: {{interfaces}}
     elements:
       - key: id
         type: string
@@ -270,6 +271,11 @@ elements:
         type: string
         itemType: ''
         description: Developer comments on this part or tool.
+        derivedFrom: []
+      - key: interfaces
+        type: list
+        itemType: 3-DataStructures/6-InterfaceListItem.yaml'
+        description: Listing of interfaces for the part or tool.
         derivedFrom: []
     derivedFrom: []
   3-DataStructures/3-ActivityStep.yaml: &ref_13
@@ -391,6 +397,34 @@ elements:
         description: Listing of expected output parameters from this function.
         derivedFrom: []
     derivedFrom: []
+  3-DataStructures/6-InterfaceListItem.yaml: &ref_16
+    name: Interface List Item
+    purpose: Identifies an interface on a part or tool.
+    template: |
+      id: {{id}}
+      description: {{description}}
+      descriptionLong: {{descriptionLong}}
+    elements:
+      - key: id
+        type: string
+        itemType: ''
+        description: >-
+          Inteface's ID.  Format = single word, only lowercase letters, and may
+          contain hyphens and underscores.
+        derivedFrom: []
+      - key: description
+        type: string
+        itemType: ''
+        description: Human readable name for the interface.
+        derivedFrom: []
+      - key: descriptionLong
+        type: string
+        itemType: ''
+        description: >-
+          Computed value = "{{id}}:\ {{description}}".  Used as shortcut in
+          documentation.
+        derivedFrom: []
+    derivedFrom: []
 package:
   name: dof
   version: 0.1.6
@@ -423,3 +457,4 @@ generationDate: 2/22/2023
   - *ref_13
   - *ref_14
   - *ref_15
+  - *ref_16

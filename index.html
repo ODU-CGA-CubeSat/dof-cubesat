@@ -465,6 +465,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_activity_step">Activity Step</a></li>
 <li><a href="#_parameter">Parameter</a></li>
 <li><a href="#_function">Function</a></li>
+<li><a href="#_interface_list_item">Interface List Item</a></li>
 </ul>
 </li>
 </ul>
@@ -767,7 +768,8 @@ quantity: {{quantity}}
 quantityUnits: {{quantityUnits}}
 options: {{options}}
 selectedOption: {{selectedOption}}
-notes: {{notes}}</pre>
+notes: {{notes}}
+interfaces: {{interfaces}}</pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -850,6 +852,13 @@ notes: {{notes}}</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Developer comments on this part or tool.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interfaces</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3-DataStructures/6-InterfaceListItem.yaml'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing of interfaces for the part or tool.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -1064,13 +1073,69 @@ outputs: {{outputs}}</pre>
 </tbody>
 </table>
 </div>
+<div class="sect2">
+<h3 id="_interface_list_item">Interface List Item</h3>
+<div class="paragraph">
+<p><strong>Purpose:</strong> Identifies an interface on a part or tool.</p>
+</div>
+<div class="listingblock">
+<div class="title">Interface List Item Template</div>
+<div class="content">
+<pre>id: {{id}}
+description: {{description}}
+descriptionLong: {{descriptionLong}}</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Interface List Item Specification</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Item Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inteface&#8217;s ID.  Format = single word, only lowercase letters, and may contain hyphens and underscores.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Human readable name for the interface.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">descriptionLong</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Computed value = "{{id}}:\ {{description}}".  Used as shortcut in documentation.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version v0.1.6<br>
-Last updated 2023-02-22 22:55:14 UTC
+Last updated 2023-02-22 23:00:10 UTC
 </div>
 </div>
 </body>
