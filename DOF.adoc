@@ -1,7 +1,7 @@
 = Distributed OSHW Framework (DOF)
 J. Simmons <jrs@mach30.org>
 :revnumber: v0.1.6
-:revdate: 2/22/2023
+:revdate: 2/27/2023
 :toc: left
 
 // github specific things
@@ -392,11 +392,11 @@ interfaces: {{interfaces}}
 
 
 |interfaces
-|list
+|dictionary
 
 |3-DataStructures/6-InterfaceListItem.yaml'
 
-|Listing of interfaces for the part or tool.
+|Listing of interfaces for the part or tool.  Key = interface's id.  Value = interface's key data.
 
 | 
 

@@ -273,9 +273,11 @@ elements:
         description: Developer comments on this part or tool.
         derivedFrom: []
       - key: interfaces
-        type: list
+        type: dictionary
         itemType: 3-DataStructures/6-InterfaceListItem.yaml'
-        description: Listing of interfaces for the part or tool.
+        description: >-
+          Listing of interfaces for the part or tool.  Key = interface's id. 
+          Value = interface's key data.
         derivedFrom: []
     derivedFrom: []
   3-DataStructures/3-ActivityStep.yaml: &ref_13
@@ -436,7 +438,7 @@ package:
   author: J. Simmons <jrs@mach30.org>
   license: CC-BY-4.0
   dependencies: {}
-generationDate: 2/22/2023
+generationDate: 2/27/2023
 0-References:
   - *ref_0
   - *ref_1
