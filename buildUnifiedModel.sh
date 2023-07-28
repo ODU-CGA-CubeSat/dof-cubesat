@@ -1,8 +1,8 @@
 # !/usr/bin/env bash
 
 # create build directory for generated artifacts, if none exists
-if [ ! -r ./dist ]; then
-    mkdir dist
+if [ ! -r ./dist/linkml ]; then
+    mkdir -p dist/linkml
 fi
 
 # copy linkml schemas to build directory
