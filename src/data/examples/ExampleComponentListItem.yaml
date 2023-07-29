@@ -1,0 +1,10 @@
+id: r1
+description: 10k ohm 1% 1/4W resistor at R1
+quantity: 1
+quantityUnits: part
+options:
+- _10k-ohm-1%-0.25-watt-resistor-generic
+- _10k-ohm-1%-0.25-watt-resistor-digikey
+- _10k-ohm-1%-0.25-watt-resistor-mouser
+selectedOption: 1
+notes: Originally designed with generic resistor, due to availability from local electronic stores (s.a., RadioShack and Frys Electronics), but are now no longer in business.

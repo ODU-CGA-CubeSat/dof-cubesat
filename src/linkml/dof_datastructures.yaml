@@ -6,11 +6,11 @@ description: |-
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
   - linkml:types
-  - m30ml
-  - root
-  - core
-  - kernel
-  - systems
+#  - m30ml
+#  - root
+#  - core
+#  - kernel
+#  - systems
 prefixes:
 #  dof: https://w3id.org/Mach30/dof
   m30ml_root: https://w3id.org/Mach30/m30ml/blob/main/src/linkml/root.yaml
@@ -24,7 +24,11 @@ prefixes:
 #default_prefix: dof
 default_range: string
 
-#classes:
+classes:
+  ComponentList:
+    tree_root: true
+    slots:
+      - componentListItems
 #  Component:
 #    is_a:
 #      Element
@@ -43,22 +47,26 @@ default_range: string
 #      - tools
 #      - precautions
 #      - assemblySteps
-#  ComponentListItem:
+  ComponentListItem:
 #    is_a:
 #      Element
-#    description: :-
-#      Represents the smallest logical element in an OSHW project.  A Component may be a project in its own right (with a sub-component hierarchy) or may be nested as a sub-component in the "source" of another component.
-#    slots:
-#      - descriptionLong
-#      - descriptionSelected
-#      - quantity
-#      - quantityUnits
-#      - options
-#      - selectedOption
-#      - notes
-#
-#
-#slots:
+    description: :-
+      Identifies a part or tool used in the fabrication of the component. Parts and tools are defined by their source material in the components list.
+    slots:
+      - id
+      - description
+      - descriptionLong
+      - descriptionSelected
+      - quantity
+      - quantityUnits
+      - options
+      - selectedOption
+      - notes
+
+slots:
+  componentListItems:
+    multivalued: true
+    range: ComponentListItem
 #  #shortName: # need to comment out, else runs into a conflict with root
 #  #  description: :-
 #  #    Source representation of the component's name.  Format = single word, only lowercase letters, and may contain hyphens and underscores.
@@ -130,35 +138,42 @@ default_range: string
 #    description: :-
 #      Sequence of steps required to assemble the component.
 #    #derivedFrom: []
-#  descriptionLong:
-#    description: :-
-#      Computed value = "{{id}}:\ {{description}}".  Used as shortcut in documentation.
-#    #derivedFrom: []
-#  descriptionSelected:
-#    description: :-
-#      Computed value = "{{id}}:\ {{description}} ({{selectedOption.description}} v{{selectedOption.version}})"
-#    #derivedFrom: []
-#  quantity:
-#    range: integer
-#    description: :-
-#      Defines how much of the item is required (whole number or real number depending on item)
-#    #derivedFrom: []
-#  quantityUnits:
-#    description: :-
-#      Unit of measure for the specified quantity.  When specifiying units for whole components use "part".
-#    #derivedFrom: []
-#  options:
-#    inlined_as_list: true
-#    multivalued: true
-#    description: :-
-#      List of component names defining available substitutions for the part or tool.
-#    #derivedFrom: []
-#  selectedOption:
-#    range: integer
-#    description: :-
-#      Specifies the selected option from the list of component options.
-#    #derivedFrom: []
-#  notes:
-#    description: :-
-#      Developer comments on this part or tool.
-#    #derivedFrom: []
+  id:
+    description: :-
+      Part’s ID (or part number). Format = single word, only lowercase letters, and may contain hyphens and underscores.
+    #derivedFrom: []
+  description:
+    description: :-
+      Human readable name for the part (not name of the selected component for this part).
+  descriptionLong:
+    description: :-
+      Computed value = "{{id}}:\ {{description}}".  Used as shortcut in documentation.
+    #derivedFrom: []
+  descriptionSelected:
+    description: :-
+      Computed value = "{{id}}:\ {{description}} ({{selectedOption.description}} v{{selectedOption.version}})"
+    #derivedFrom: []
+  quantity:
+    range: integer
+    description: :-
+      Defines how much of the item is required (whole number or real number depending on item)
+    #derivedFrom: []
+  quantityUnits:
+    description: :-
+      Unit of measure for the specified quantity.  When specifiying units for whole components use "part".
+    #derivedFrom: []
+  options:
+    inlined_as_list: true
+    multivalued: true
+    description: :-
+      List of component names defining available substitutions for the part or tool.
+    #derivedFrom: []
+  selectedOption:
+    range: integer
+    description: :-
+      Specifies the selected option from the list of component options.
+    #derivedFrom: []
+  notes:
+    description: :-
+      Developer comments on this part or tool.
+    #derivedFrom: []
