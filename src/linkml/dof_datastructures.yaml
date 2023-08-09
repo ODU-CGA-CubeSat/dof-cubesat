@@ -25,10 +25,10 @@ prefixes:
 default_range: string
 
 classes:
-  ComponentList:
+  ComponentDict:
     tree_root: true
     slots:
-      - componentListItems
+      - ComponentDictItems
 #  Component:
 #    is_a:
 #      Element
@@ -47,7 +47,7 @@ classes:
 #      - tools
 #      - precautions
 #      - assemblySteps
-  ComponentListItem:
+  ComponentDictItem:
 #    is_a:
 #      Element
     description: :-
@@ -64,9 +64,9 @@ classes:
       - notes
 
 slots:
-  componentListItems:
+  ComponentDictItems:
     multivalued: true
-    range: ComponentListItem
+    range: ComponentDictItem
 #  #shortName: # need to comment out, else runs into a conflict with root
 #  #  description: :-
 #  #    Source representation of the component's name.  Format = single word, only lowercase letters, and may contain hyphens and underscores.
@@ -108,8 +108,8 @@ slots:
 #    #derivedFrom: []
 #  parts:
 #    multivalued: true
-#    range: ComponentListItem
-#    #itemType: 3-DataStructures/2-ComponentListItem.yaml
+#    range: ComponentDictItem
+#    #itemType: 3-DataStructures/2-ComponentDictItem.yaml
 #    description: :-
 #      Listing of the component's parts (and substitutions) defined as sub-components.  Key = part's id.  Value = part's key data.
 #    #derivedFrom: []
@@ -118,8 +118,8 @@ slots:
 #  #  itemType: 3-DataStructures/5-Function.yaml
 #  tools:
 #    multivalued: true
-#    range: ComponentListItem
-#    #itemType: 3-DataStructures/2-ComponentListItem.yaml
+#    range: ComponentDictItem
+#    #itemType: 3-DataStructures/2-ComponentDictItem.yaml
 #    description: :-
 #      Listing of the required tools (and substitutions) defined as sub-components.  Key = tool's id.  Value = tool's key data.
 #    #derivedFrom: []
