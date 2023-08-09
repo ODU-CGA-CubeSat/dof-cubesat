@@ -6,17 +6,17 @@ description: |-
 license: https://creativecommons.org/licenses/by/4.0/
 imports:
   - linkml:types
-#  - m30ml
-#  - root
-#  - core
-#  - kernel
-#  - systems
+  # - m30ml
+  # - root
+  # - core
+  # - kernel
+  # - systems
 prefixes:
-#  dof: https://w3id.org/Mach30/dof
-  m30ml_root: https://w3id.org/Mach30/m30ml/blob/main/src/linkml/root.yaml
-  m30ml_core: https://w3id.org/Mach30/m30ml/blob/main/src/linkml/core.yaml
-  m30ml_kernel: https://w3id.org/Mach30/m30ml/blob/main/src/linkml/kernel.yaml
-  m30ml_systems: https://w3id.org/Mach30/m30ml/blob/main/src/linkml/systems.yaml
+  # dof: https://w3id.org/Mach30/dof
+  # m30ml_root: https://w3id.org/Mach30/m30ml/blob/main/src/linkml/root.yaml
+  # m30ml_core: https://w3id.org/Mach30/m30ml/blob/main/src/linkml/core.yaml
+  # m30ml_kernel: https://w3id.org/Mach30/m30ml/blob/main/src/linkml/kernel.yaml
+  # m30ml_systems: https://w3id.org/Mach30/m30ml/blob/main/src/linkml/systems.yaml
   linkml: https://w3id.org/linkml/
   xsd: http://www.w3.org/2001/XMLSchema#
   shex: http://www.w3.org/ns/shex#
