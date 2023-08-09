@@ -28,7 +28,9 @@ classes:
   ComponentDict:
     tree_root: true
     slots:
-      - ComponentDictItems
+      - componentdict
+    description: |-
+      Identifies a dictionary of parts or tools used in the fabrication of the component.
 #  Component:
 #    is_a:
 #      Element
@@ -64,7 +66,7 @@ classes:
       - notes
 
 slots:
-  ComponentDictItems:
+  componentdict:
     multivalued: true
     range: ComponentDictItem
 #  #shortName: # need to comment out, else runs into a conflict with root
