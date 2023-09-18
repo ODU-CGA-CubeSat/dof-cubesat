@@ -4,3 +4,35 @@
  * This is a general purpose Gradle build.
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/8.1.1/samples
  */
+
+plugins {
+    id 'base'
+}
+
+def src = "$projectDir/src/linkml"
+def schemaOutDir = "schema"
+def schemaBuildDir = "$buildDir/$schemaOutDir"
+def unifiedSchemaPath = "$schemaBuildDir/dof-cubesat.yaml"
+
+tasks.register('buildUnifiedYaml', Exec) {
+    inputs.files(fileTree("$src"))
+        .withPropertyName('sourceFiles')
+        .withPathSensitivity(PathSensitivity.ABSOLUTE)
+    outputs.dir(layout.buildDirectory.dir("$schemaOutDir"))
+        .withPropertyName('outputDir')
+    commandLine "bash", "-c", "gen-yaml $src/dof_datastructures.yaml --mergeimports > $unifiedSchemaPath"
+}
+
+tasks.register('cleanupUnifiedYaml', Exec) {
+    dependsOn(buildUnifiedYaml)
+    inputs.files(fileTree("$schemaOutDir"))
+        .withPropertyName('sourceFiles')
+        .withPathSensitivity(PathSensitivity.ABSOLUTE)
+    outputs.dir(layout.buildDirectory.dir("$schemaOutDir"))
+        .withPropertyName('outputDir')
+    commandLine "yq", "-i", "del(.imports)", "$unifiedSchemaPath"
+}
+
+tasks.named("assemble") {
+    dependsOn(cleanupUnifiedYaml)
+}
