@@ -26,11 +26,15 @@ default_range: string
 
 classes:
   ComponentDict:
-    tree_root: true
     slots:
       - componentdict
     description: |-
       Identifies a dictionary of parts or tools used in the fabrication of the component.
+  AssemblySteps:
+    slots:
+      - activitysteps
+    description: |-
+      Sequence of steps required to assemble the component.
 #  Component:
 #    is_a:
 #      Element
@@ -64,11 +68,24 @@ classes:
       - options
       - selectedOption
       - notes
+  ActivityStep:
+#    is_a:
+#      Element
+    description: :-
+      Defines a single step in an activity, e.g. assembly instructions.
+    slots:
+      - summary
+      - requiredParts
+      - requiredTools
+      - details
 
 slots:
   componentdict:
     multivalued: true
     range: ComponentDictItem
+  activitysteps:
+    multivalued: true
+    range: ActivityStep
 #  #shortName: # need to comment out, else runs into a conflict with root
 #  #  description: :-
 #  #    Source representation of the component's name.  Format = single word, only lowercase letters, and may contain hyphens and underscores.
@@ -179,3 +196,17 @@ slots:
     description: :-
       Developer comments on this part or tool.
     #derivedFrom: []
+  summary:
+    description: :-
+      Brief overview of the step (optional if step includes details). Can be used as a heading in documentation rendered from the step.
+  requiredParts:
+    description: :-
+      Optional list of part IDs needed to complete this step.
+    multivalued: true
+  requiredTools:
+    description: :-
+      Optional list of tool IDs needed to complete this step.
+    multivalued: true
+  details:
+    description: :-
+      Multiline formatted text string defining the details of the step (optional if step includes summary). Format is up to user (e.g. list, ordered list, narrative text, some combination).
